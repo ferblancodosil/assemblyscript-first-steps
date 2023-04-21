@@ -1,0 +1,31 @@
+{
+  "name": "webassembly-as-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug --exportRuntime --transform json-as/transform --transform visitor-as",
+    "asbuild:release": "asc assembly/index.ts --target release --exportRuntime --transform json-as/transform --transform visitor-as",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npm run asbuild && serve ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.25.0",
+    "json-as": "^0.5.24",
+    "visitor-as": "^0.11.4"
+  },
+  "devDependencies": {
+    "assemblyscript": "0.25.0",
+    "serve": "^14.2.0"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}

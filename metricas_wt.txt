@@ -1,0 +1,105 @@
+¡Por supuesto! A continuación se presentan algunas fórmulas que se pueden utilizar para calcular las métricas a partir de los datos proporcionados:
+
+Costo por clic (CPC):
+CPC = TrafficCost / NClicks
+
+Margen:
+Margen = (Revenue - TotalCost) / Revenue
+
+Tasa de conversión de la página de inicio (ICR):
+ICR = Orders / PLClicks
+
+Tasa de conversión de la página de detalle del producto (DCR):
+DCR = Orders / LClicks
+
+Tasa de conversión del carrito (LCR):
+LCR = Orders / NClicks
+
+Tasa de conversión de la página de pago (PLCR):
+PLCR = Orders / HCR
+
+Tasa de clics en anuncios (CTR):
+CTR = (PLClicks + LClicks + NClicks) / AdTagImpressions
+
+Tasa de cancelación (RCR):
+RCR = Cancellations / Orders
+
+Tasa de reembolso:
+Tasa de reembolso = Refunds / Orders
+
+Tasa de disputa:
+Tasa de disputa = Disputes / Orders
+
+Costo total:
+TotalCost = ProductCost + PaymentFee + ShippingCost + IssueCost + Taxes + TrafficCost + PromoterCost + ExpressShipping
+
+Espero que esto te sea útil. ¡Déjame saber si necesitas más ayuda!
+
+
+
+
+Fernando Blanco
+dame 20 kpis más con sus formulas
+¡Por supuesto! Aquí hay 20 KPI adicionales que se pueden calcular a partir de los datos proporcionados y sus fórmulas correspondientes:
+
+Tasa de conversión de leads:
+Tasa de conversión de leads = Leads / AdTagImpressions
+
+Costo por lead:
+Costo por lead = PromoterCost / Leads
+
+Costo por adquisición (CPA):
+CPA = TotalCost / Orders
+
+Ingreso promedio por pedido:
+Ingreso promedio por pedido = Revenue / Orders
+
+Rentabilidad por pedido:
+Rentabilidad por pedido = Profit / Orders
+
+Margen bruto:
+Margen bruto = (Revenue - ProductCost) / Revenue
+
+Margen de contribución:
+Margen de contribución = (Revenue - ProductCost - ShippingCost) / Revenue
+
+Ganancia por clic:
+Ganancia por clic = Profit / NClicks
+
+Valor de vida del cliente (CLV):
+CLV = (Ingreso promedio por pedido * Margen de contribución) / Tasa de cancelación
+
+Costo de adquisición del cliente (CAC):
+CAC = PromoterCost / Leads
+
+Costo de envío promedio:
+Costo de envío promedio = ShippingCost / Orders
+
+Costo de pago promedio:
+Costo de pago promedio = PaymentFee / Orders
+
+Tiempo de vida del cliente (LTV):
+LTV = CLV / Tasa de cancelación
+
+Relación costo-beneficio (ROI):
+ROI = (Revenue - TotalCost) / TotalCost
+
+Tasa de abandono del carrito:
+Tasa de abandono del carrito = (NClicks - Orders) / NClicks
+
+Tasa de conversión de nuevos visitantes:
+Tasa de conversión de nuevos visitantes = Orders / (PLClicks + LClicks)
+
+Tasa de conversión de visitantes recurrentes:
+Tasa de conversión de visitantes recurrentes = Orders / TrafficCost
+
+Costo de conversión:
+Costo de conversión = TotalCost / Orders
+
+Valor del pedido medio:
+Valor del pedido medio = Revenue / Orders
+
+Tasa de retorno de inversión publicitaria (ROAS):
+ROAS = Revenue / TrafficCost
+
+Espero que esto te sea útil. ¡Déjame saber si necesitas más ayuda!

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="importmap">
+    {
+        "imports": {
+            "index": "./javascript/sharedFuncs.js",
+            "fibonacci": "./javascript/fibonacci.js",
+            "cartesian": "./javascript/cartesian.js"
+        }
+    }
+</script>
+<script type="module">
+import { executionExample, add, getMeta, fibonacci as fibonacciAS, cartesian as cartesianAS, crearRectangulo, areaDelRectangulo, countDown } from "./build/release.js";
+import { fibonacci as fibonacciJS} from "fibonacci";
+import { cartesian as cartesianJS, generateRandomStringsMatrix} from "cartesian";
+import { consoleLog } from "index"
+
+// consoleLog("Rectangulo", areaDelRectangulo(crearRectangulo(10, 20)))
+
+const exampleResponse = executionExample();
+consoleLog(`El valor recibido desde AS: ${exampleResponse}`);
+
+const showStep = (str) => {
+    const step = document.createElement("li")
+    step.innerText = str;
+    document.getElementById("steps").append(step)
+}
+
+// Llamada a función básica
+const sum = (n1 = 1, n2 = 4) => showStep(`Suma: ${add(n1, n2)}`)
+
+// Instanciar objeto desde string JSON
+const instanceObject = () => {
+    const person = {"age":31,"name":"fernando", "meta": { "country": "US", "awesome": "true"}}
+    const meta = getMeta(JSON.stringify(person))
+    consoleLog(meta)
+    showStep(meta.moreInfo)
+}
+
+
+// Ejecución y medición por consola de fibonacci
+const calculateFibonacci = (fibNumber = 100) => {// 1000000000
+    console.time("fibonacciJS")
+    fibonacciJS(fibNumber)
+    console.timeEnd("fibonacciJS")
+
+    console.time("fibonacciAS")
+    fibonacciAS(fibNumber)
+    console.timeEnd("fibonacciAS")
+    showStep("Mira en la consola los tiempos de los fibonacci")
+}
+
+const calculateCartesian = () => {
+    new Promise((resolve) => {
+        countDown(100000);
+        resolve();
+    }).then(() => {
+        consoleLog("FIN")
+    })
+    consoleLog("generate random matrix")
+    const randomMatrix = generateRandomStringsMatrix(5, 3, 5)
+    /* const randomMatrix = [
+        ['Galicia'],
+        ['A Coruña', 'Lugo', 'Ourense', 'Pontevedra'],
+        ['Xurxo', 'Uxia', 'Antón', 'Xoel', 'Mariaña', 'Belén']
+    ] */
+    consoleLog("generated random matrix")
+
+    console.time("cartesianJS")
+    const resultJS = cartesianJS(randomMatrix)
+    console.timeEnd("cartesianJS")
+    // consoleLog(resultJS)
+
+
+    console.time("cartesianAS")
+    /* const resultAS = cartesianAS([
+        ['Galicia'],
+        ['A Coruña', 'Lugo', 'Ourense', 'Pontevedra'],
+        ['Xurxo', 'Uxia', 'Antón', 'Xoel', 'Mariaña', 'Belén']
+    ]) */
+    const resultAS = cartesianJS(randomMatrix)
+    console.timeEnd("cartesianAS")
+    // consoleLog(resultAS)
+}
+
+const hello = () => {
+    consoleLog("HELLO")
+}
+
+document.getElementById("btnSum").addEventListener('click', sum)
+document.getElementById("btnObjs").addEventListener('click', instanceObject)
+document.getElementById("btnFibonacci").addEventListener('click', calculateFibonacci)
+document.getElementById("btnCartesian").addEventListener('click', calculateCartesian)
+document.getElementById("btnHello").addEventListener('click', hello)
+</script>
+</head>
+<body>
+    <div>
+        <button id="btnSum">Suma</button>
+        <button id="btnFibonacci">Fibonacci</button>
+        <button id="btnCartesian">Cartesian</button>
+        <button id="btnObjs">Intercambio de obj</button>
+        <button id="btnHello">Say hello!</button>
+    </div>
+    <ul id="steps"></ul>
+    <div id="log"></div>
+</body>
+</html>
